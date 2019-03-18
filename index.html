@@ -1,41 +1,136 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
-  <meta charset="utf-8">
-  <title></title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="apple-touch-icon" href="icon.png" />
+    <!-- Place favicon.ico in the root directory -->
 
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
-  <!-- Place favicon.ico in the root directory -->
+    <!-- Normalize -->
+    <link rel="stylesheet" href="css/normalize.css" />
 
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
+    <!-- W3.CSS theme-->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://www.w3schools.com/lib/w3-theme-blue-grey.css"
+    />
+    <link
+      href="https://cdn.materialdesignicons.com/3.5.95/css/materialdesignicons.min.css"
+      rel="stylesheet"
+    />
 
-  <meta name="theme-color" content="#fafafa">
-</head>
+    <!-- Main css-->
+    <link rel="stylesheet" href="css/main.css" />
 
-<body>
-  <!--[if lte IE 9]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]-->
+    <meta name="theme-color" content="#fafafa" />
+  </head>
 
-  <!-- Add your site or application content here -->
-  <p>Test, Hello world! This is HTML5 Boilerplate.</p>
-  <script src="js/vendor/modernizr-3.6.0.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
+  <body>
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
 
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('send', 'pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
-</body>
+    <!-- Add your site or application content here -->
+    <!-- Side Navigation -->
+    <nav
+      class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-top"
+      style="display:none"
+      id="mySidebar"
+    >
+      <button
+        onclick="w3_close()"
+        class="mdi mdi-close w3-button w3-display-topright"
+      ></button>
+      <a href="#" class="w3-bar-item w3-button">Content</a>
+      <a href="#" class="w3-bar-item w3-button">Link 1</a>
+      <a href="#" class="w3-bar-item w3-button">Link 2</a>
+      <a href="#" class="w3-bar-item w3-button">Link 3</a>
+      <a href="#" class="w3-bar-item w3-button">Link 4</a>
+    </nav>
 
+    <!-- Header -->
+    <header class="w3-container w3-theme w3-padding" id="myHeader">
+      <i
+        onclick="w3_open()"
+        class="mdi mdi-menu w3-xlarge w3-button w3-theme w3-display-topleft"
+      ></i>
+      <div class="w3-center">
+        <h1 class="w3-xxxlarge w3-animate-bottom">Joseph Douce</h1>
+        <h4>BEng (Hons)</h4>
+      </div>
+    </header>
+
+    <div class="w3-row-padding w3-center w3-margin-top">
+      <div class="w3-half">
+        <div class="w3-card w3-container" style="min-height:460px">
+          <h3>Work</h3>
+          <br />
+          <i
+            class="mdi mdi-wrench w3-margin-bottom w3-text-theme"
+            style="font-size:120px"
+          ></i>
+        </div>
+      </div>
+
+      <div class="w3-half">
+        <div class="w3-card w3-container" style="min-height:460px">
+          <h3>Play</h3>
+          <br />
+          <i
+            class="mdi mdi-piano w3-margin-bottom w3-text-theme"
+            style="font-size:120px"
+          ></i>
+        </div>
+      </div>
+    </div>
+
+    <footer class="w3-container w3-theme-l1 w3-center w3-margin-top">
+      <div class="w3-padding-16">
+        <i class="mdi mdi-facebook w3-hover-opacity"></i>
+        <i class="mdi mdi-instagram w3-hover-opacity"></i>
+        <i class="mdi mdi-twitter w3-hover-opacity"></i>
+        <i class="mdi mdi-linkedin w3-hover-opacity"></i>
+      </div>
+    </footer>
+
+    <script src="js/vendor/modernizr-3.6.0.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      window.jQuery ||
+        document.write(
+          '<script src="js/vendor/jquery-3.3.1.min.js"><\/script>'
+        );
+    </script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+    <script>
+      window.ga = function() {
+        ga.q.push(arguments);
+      };
+      ga.q = [];
+      ga.l = +new Date();
+      ga("create", "UA-XXXXX-Y", "auto");
+      ga("send", "pageview");
+    </script>
+    <script
+      src="https://www.google-analytics.com/analytics.js"
+      async
+      defer
+    ></script>
+  </body>
 </html>
