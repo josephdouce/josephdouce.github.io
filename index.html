@@ -1,33 +1,43 @@
 <!DOCTYPE html>
 <html class="no-js" lang="">
   <head>
+    <!-- Site Info-->
     <meta charset="utf-8" />
-    <title></title>
-    <meta name="description" content="" />
+    <title>Portfolio</title>
+    <meta name="description" content="Portfolio" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="icon" type="image/png" href="favicon.png">
 
+	<!-- Manifest -->
     <link rel="manifest" href="site.webmanifest" />
     <link rel="apple-touch-icon" href="icon.png" />
-    <!-- Place favicon.ico in the root directory -->
+	<meta name="theme-color" content="#fafafa" />
 
     <!-- Normalize -->
     <link rel="stylesheet" href="css/normalize.css" />
 
-    <!-- W3.CSS theme-->
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-    <link
-      rel="stylesheet"
-      href="https://www.w3schools.com/lib/w3-theme-blue-grey.css"
-    />
-    <link
-      href="https://cdn.materialdesignicons.com/3.5.95/css/materialdesignicons.min.css"
-      rel="stylesheet"
-    />
-
+    <!-- W3.CSS -->
+	<!-- https://www.w3schools.com/w3css/4/w3.css -->
+	<link rel="stylesheet" href="css/w3.css">
+	<!-- https://www.w3schools.com/lib/w3-theme-blue-grey.css -->
+	<link rel="stylesheet" href="css/w3-theme-blue-grey.css">
+	
+	<!-- Font --> 
+	<style>
+		html, body, h1, h2, h3, h4, h5, h6 {
+		  font-family: "Comic Sans MS", cursive, sans-serif;
+		}
+	</style>
+	
     <!-- Main css-->
     <link rel="stylesheet" href="css/main.css" />
-
-    <meta name="theme-color" content="#fafafa" />
+	
+	<!-- Icons -->
+	<!-- https://cdn.materialdesignicons.com/3.8.95/css/materialdesignicons.min.css -->
+    <link
+	  href="https://cdn.materialdesignicons.com/3.8.95/css/materialdesignicons.min.css"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
@@ -40,97 +50,213 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <!-- Side Navigation -->
-    <nav
-      class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-top"
-      style="display:none"
-      id="mySidebar"
-    >
-      <button
-        onclick="w3_close()"
-        class="mdi mdi-close w3-button w3-display-topright"
-      ></button>
-      <a href="#" class="w3-bar-item w3-button">Content</a>
-      <a href="#" class="w3-bar-item w3-button">Link 1</a>
-      <a href="#" class="w3-bar-item w3-button">Link 2</a>
-      <a href="#" class="w3-bar-item w3-button">Link 3</a>
-      <a href="#" class="w3-bar-item w3-button">Link 4</a>
-    </nav>
 
     <!-- Header -->
-    <header class="w3-container w3-theme w3-padding" id="myHeader">
-      <i
-        onclick="w3_open()"
-        class="mdi mdi-menu w3-xlarge w3-button w3-theme w3-display-topleft"
+    <div class="w3-container w3-theme header" id="myHeader">
+	  <i
+            class="mdi mdi-home w3-xlarge w3-button w3-theme w3-display-topleft" 
+            style="font-size:40px; z-index:1"
+			onclick="openTab('Home')"
       ></i>
       <div class="w3-center">
-        <h1 class="w3-xxxlarge w3-animate-bottom">Joseph Douce</h1>
+        <h1 class="w3-xxlarge w3-animate-bottom">Joseph Douce</h1>
         <h4>BEng (Hons)</h4>
-      </div>
-    </header>
-
-    <div class="w3-row-padding w3-center w3-margin-top">
-      <div class="w3-half">
-        <div class="w3-card w3-container" style="min-height:460px">
-          <h3>Work</h3>
-          <br />
-          <i
-            class="mdi mdi-wrench w3-margin-bottom w3-text-theme"
-            style="font-size:120px"
-          ></i>
-        </div>
-      </div>
-
-      <div class="w3-half">
-        <div class="w3-card w3-container" style="min-height:460px">
-          <h3>Play</h3>
-          <br />
-          <i
-            class="mdi mdi-piano w3-margin-bottom w3-text-theme"
-            style="font-size:120px"
-          ></i>
-        </div>
       </div>
     </div>
 
-    <footer class="w3-container w3-theme-l1 w3-center w3-margin-top">
+	<!-- Main Body -->
+	<div class="content">
+		<!-- Home Tab -->
+		<div id="Home" class="w3-row-padding w3-center w3-margin-top tabPage">
+		  <div class="w3-half">
+			<div class="w3-card w3-container w3-display-container" style="min-height:45vw">
+			  <p class="w3-text-theme">Work</p>
+			  <div class="w3-display-middle">
+			  <i
+				class="mdi mdi-wrench w3-margin-bottom w3-text-theme w3-hover-opacity" 
+				style="font-size:120px"
+				onclick="openTab('Work')"
+			  ></i>
+			  </div>
+			</div>
+		  </div>
+
+		  <div class="w3-half">
+			<div class="w3-card w3-container w3-display-container" style="min-height:45vw">
+			  <p class="w3-text-theme">Play</p>
+			  <div class="w3-display-middle">
+			  <i
+				class="mdi mdi-piano w3-margin-bottom w3-text-theme w3-hover-opacity"
+				style="font-size:120px"
+				onclick="openTab('Play')"
+			  ></i>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		
+		<!-- Work Tab -->
+		<div id="Work" class="w3-row-padding w3-center w3-margin-top tabPage" style="display:none">
+		
+			<div class="w3-quarter w3-margin-bottom">
+				<div class="w3-card w3-container w3-display-container" style="min-height:24vw">
+				  <i
+					class="mdi mdi-certificate w3-margin-bottom w3-text-theme w3-hover-opacity w3-display-middle"
+					style="font-size:120px"
+					onclick="openTab('')"
+				  ></i>
+				  <p class="w3-text-theme">Qualifications</p>
+				</div>
+			</div>
+			
+			<div class="w3-quarter w3-margin-bottom">
+				<div class="w3-card w3-container w3-display-container" style="min-height:24vw">
+				  <i
+					class="mdi mdi-wrench w3-margin-bottom w3-text-theme w3-hover-opacity w3-display-middle"
+					style="font-size:120px"
+					onclick="openTab('')"
+				  ></i>
+				  <p class="w3-text-theme">Experience</p>
+				</div>
+			</div>
+			
+		</div>
+		
+		<!-- Play Tab -->
+		<div id="Play" class="w3-row-padding w3-center w3-margin-top tabPage" style="display:none">
+			
+			<div class="w3-quarter w3-margin-bottom">
+				<div class="w3-card w3-container w3-display-container" style="min-height:24vw">
+				  <i
+					class="mdi mdi-language-python w3-margin-bottom w3-text-theme w3-hover-opacity w3-display-middle"
+					style="font-size:120px"
+					onclick="openTab('')"
+				  ></i>
+				  <p class="w3-text-theme">Python</p>
+				</div>
+			</div>
+			
+			<div class="w3-quarter w3-margin-bottom">
+				<div class="w3-card w3-container w3-display-container" style="min-height:24vw">
+				  <i
+					class="mdi mdi-language-html5 w3-margin-bottom w3-text-theme w3-hover-opacity w3-display-middle"
+					style="font-size:120px"
+					onclick="openTab('')"
+				  ></i>
+				  <p class="w3-text-theme">HTML5</p>
+				</div>
+			</div>
+			
+			<div class="w3-quarter w3-margin-bottom">
+				<div class="w3-card w3-container w3-display-container" style="min-height:24vw">
+				  <i
+					class="mdi mdi-piano w3-margin-bottom w3-text-theme w3-hover-opacity w3-display-middle"
+					style="font-size:120px"
+					onclick="openTab('')"
+				  ></i>
+				  <p class="w3-text-theme">Piano</p>
+				</div>
+			</div>
+			
+			<div class="w3-quarter w3-margin-bottom">
+				<div class="w3-card w3-container w3-display-container" style="min-height:24vw">
+				  <i
+					class="mdi mdi-nature-people w3-margin-bottom w3-text-theme w3-hover-opacity w3-display-middle"
+					style="font-size:120px"
+					onclick="openTab('')"
+				  ></i>
+				  <p class="w3-text-theme">Bee Keeping</p>
+				</div>
+			</div>
+			
+			<div class="w3-quarter w3-margin-bottom">
+				<div class="w3-card w3-container w3-display-container" style="min-height:24vw">
+				  <i
+					class="mdi mdi-bullseye-arrow w3-margin-bottom w3-text-theme w3-hover-opacity w3-display-middle"
+					style="font-size:120px"
+					onclick="openTab('')"
+				  ></i>
+				  <p class="w3-text-theme">Archery</p>
+				</div>
+			</div>
+			
+			<div class="w3-quarter w3-margin-bottom">
+				<div class="w3-card w3-container w3-display-container" style="min-height:24vw">
+				  <i
+					class="mdi mdi-car w3-margin-bottom w3-text-theme w3-hover-opacity w3-display-middle"
+					style="font-size:120px"
+					onclick="openTab('')"
+				  ></i>
+				  <p class="w3-text-theme">Beetle</p>
+				</div>
+			</div>
+			
+			<div class="w3-quarter w3-margin-bottom">
+				<div class="w3-card w3-container w3-display-container" style="min-height:24vw">
+				  <i
+					class="mdi mdi-motorbike w3-margin-bottom w3-text-theme w3-hover-opacity w3-display-middle"
+					style="font-size:120px"
+					onclick="openTab('')"
+				  ></i>
+				  <p class="w3-text-theme">Motorcycle</p>
+				</div>
+			</div>
+			
+			<div class="w3-quarter w3-margin-bottom">
+				<div class="w3-card w3-container w3-display-container" style="min-height:24vw">
+				  <i
+					class="mdi mdi-gamepad-variant-outline w3-margin-bottom w3-text-theme w3-hover-opacity w3-display-middle"
+					style="font-size:120px"
+					onclick="openTab('')"
+				  ></i>
+				  <p class="w3-text-theme">Games</p>
+				</div>
+			</div>
+			
+			<div class="w3-quarter w3-margin-bottom">
+				<div class="w3-card w3-container w3-display-container" style="min-height:24vw">
+				  <i
+					class="mdi mdi-hand-saw w3-margin-bottom w3-text-theme w3-hover-opacity w3-display-middle"
+					style="font-size:120px"
+					onclick="openTab('')"
+				  ></i>
+				  <p class="w3-text-theme">Woodworking</p>
+				</div>
+			</div>
+			
+			<div class="w3-quarter w3-margin-bottom">
+				<div class="w3-card w3-container w3-display-container" style="min-height:24vw">
+				  <i
+					class="mdi mdi-quadcopter w3-margin-bottom w3-text-theme w3-hover-opacity w3-display-middle"
+					style="font-size:120px"
+					onclick="openTab('')"
+				  ></i>
+				  <p class="w3-text-theme">Flying</p>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
+	<!-- Footer -->
+    <div class="w3-container w3-theme-l1 w3-center w3-margin-top footer">
       <div class="w3-padding-16">
         <i class="mdi mdi-facebook w3-hover-opacity"></i>
+		<i class="mdi mdi-github-circle w3-hover-opacity"></i>
         <i class="mdi mdi-instagram w3-hover-opacity"></i>
         <i class="mdi mdi-twitter w3-hover-opacity"></i>
         <i class="mdi mdi-linkedin w3-hover-opacity"></i>
       </div>
-    </footer>
+    </div>
 
-    <script src="js/vendor/modernizr-3.6.0.min.js"></script>
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.min.js"
-      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-      crossorigin="anonymous"
-    ></script>
-    <script>
-      window.jQuery ||
-        document.write(
-          '<script src="js/vendor/jquery-3.3.1.min.js"><\/script>'
-        );
-    </script>
-    <script src="js/plugins.js"></script>
+	<!-- Boilerplate Scripts -->
+	<script src="js/vendor/modernizr-3.6.0.min.js"></script>
+	<script src="js/vendor/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+		crossorigin="anonymous"></script>
+	<script src="js/plugins.js"></script>
+	
+	<!-- User Scripts -->
     <script src="js/main.js"></script>
-
-    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-    <script>
-      window.ga = function() {
-        ga.q.push(arguments);
-      };
-      ga.q = [];
-      ga.l = +new Date();
-      ga("create", "UA-XXXXX-Y", "auto");
-      ga("send", "pageview");
-    </script>
-    <script
-      src="https://www.google-analytics.com/analytics.js"
-      async
-      defer
-    ></script>
+	
   </body>
 </html>
